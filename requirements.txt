@@ -1,0 +1,25 @@
+# Core
+opencv-python
+Pillow
+requests
+tqdm
+torch
+
+# YouTube
+yt_dlp
+
+# Hugging Face datasets & transformers
+datasets
+transformers
+accelerate
+
+# For vLLM (require gpu)
+# vllm
+# uvloop
+
+# FastAPI 
+fastapi
+uvicorn
+
+# Optional dev/debug
+ipykernel
