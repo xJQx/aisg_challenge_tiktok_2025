@@ -5,6 +5,7 @@
   - [✅ Option 2: If You Don’t Have a Key Yet](#-option-2-if-you-dont-have-a-key-yet)
   - [SSH into Vast.ai](#ssh-into-vastai)
 - [Setting up GPU Virtual Server](#setting-up-gpu-virtual-server)
+  - [--max-model-len 12000](#--max-model-len-12000)
 
 ---
 
@@ -57,7 +58,7 @@ Give that full string to your tech lead — **not the private key (`id_rsa`)!**
 ## SSH into Vast.ai
 
 ```bash
-ssh -i ~/.ssh/id_rsa -p 40311 root@98.185.196.146
+ssh -i ~/.ssh/id_rsa -p 13642 root@80.188.223.202
 ```
 
 ---
@@ -124,29 +125,18 @@ If not, let me know and we’ll debug the CUDA/driver setup.
 You can now launch the OpenAI-compatible vLLM server like this:
 
 ```bash
-python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-Small-3.1-24B-Instruct-2503
+python3 -m vllm.entrypoints.openai.api_server \
+  --model mistralai/Mistral-Small-3.1-24B-Instruct-2503 \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --tokenizer_mode mistral \
+  --tool-call-parser mistral \
+  --enable-auto-tool-choice \
+  --limit_mm_per_prompt 'image=10' \
+  --gpu-memory-utilization 0.95 \
+  --swap-space 16
+  --max-model-len 12000
 
-# OR a smaller model
-python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-7B-Instruct-v0.2
-```
-
-It’ll start a local API at:
-
-```bash
-http://localhost:8000/v1/completions
-```
-
-If you want to expose it to the outside:
-
-Use 98.185.196.146:40311 (which maps to internal port 8000)
-
-You’ll need to run:
-
-```bash
-python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-Small-3.1-24B-Instruct-2503 --host 0.0.0.0 --port 8000 --tensor-parallel-size 4
-
-# or Official Documentation
-vllm serve mistralai/Mistral-Small-3.1-24B-Instruct-2503 --host 0.0.0.0 --port 8000 --tokenizer_mode mistral --config_format mistral --load_format mistral --tool-call-parser mistral --enable-auto-tool-choice --limit_mm_per_prompt 'image=10' --tensor-parallel-size 2
 
 
 # OR a smaller model
@@ -172,3 +162,40 @@ Call the model from your local machine via the OpenAI API interface (just change
 Use `call_mistral()` in your script to hit `http://<your-ip>:40311/v1/completions`
 
 Process frames, annotate, summarize, etc. — now fast with GPU
+
+---
+
+ssh -i ~/.ssh/id_rsa -p 13642 root@80.188.223.202
+
+python3 -m vllm.entrypoints.openai.api_server \
+ --model mistralai/Mistral-Small-3.1-24B-Instruct-2503 \
+ --host 0.0.0.0 \
+ --port 8000 \
+ --tokenizer_mode mistral \
+ --tool-call-parser mistral \
+ --enable-auto-tool-choice \
+ --limit_mm_per_prompt 'image=10' \
+ --gpu-memory-utilization 0.95 \
+ --swap-space 16
+--max-model-len 12000
+
+---
+
+pkill -f vllm
+rm -rf models/
+rm -rf ~/.cache/huggingface/hub/models--mistralai--Mistral-Small-3.1-24B-Instruct-2503
+
+---
+
+default max_model_len = 128,000
+works
+
+- 12,000
+- 1,024
+
+doesn't work
+
+- 128,000
+- 64,000
+- 48,000
+- 24,000

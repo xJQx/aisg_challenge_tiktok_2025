@@ -1,8 +1,7 @@
 from datasets import load_dataset
 
 from scripts.phase1_process import phase1_process_video
-from scripts.models import MistralModel_Local, call_mistral_vllm
-from scripts.config import USE_LOCAL_MODEL
+from scripts.models import call_mistral_vllm
 
 if __name__ == "__main__":
     # Dataset
@@ -11,15 +10,9 @@ if __name__ == "__main__":
     print(dataset)
     
     # Call Model Function
-    if (USE_LOCAL_MODEL):
-        print("Loading Local Model...")
-        call_model = MistralModel_Local().call_mistral
-    else:
-        print("Using vLLM Mistral Model")
-        call_model = call_mistral_vllm
+    print("Using vLLM Mistral Model")
+    call_model = call_mistral_vllm
 
     print("[Phase 1 Processing]")
-    for idx, example in enumerate(dataset.select(range(2))): # Limit to 2 for now
+    for idx, example in enumerate(dataset):
         phase1_process_video(example, call_model)
-
-        break

@@ -56,18 +56,62 @@ def __encode_frame_to_base64(frame):
     return base64.b64encode(buffer.getvalue()).decode("utf-8")
 
 # Annotate Frames
-def _annotate_frames(frames, timestamps, call_model):
+def _annotate_frames(frames, timestamps, call_model, batch_size=10):
     print("\tAnnotating Extracted Frames...")
     
     annotations = []
-    for i, (frame, ts) in enumerate(zip(frames, timestamps)):
-        img_b64 = __encode_frame_to_base64(frame)
-        prompt = f"Describe briefly what's happening in this image frame (base64 encoded JPEG) taken at {ts:.2f} seconds into a video: {img_b64}\n"
-        annotation = call_model(prompt)
-        annotations.append({
-            "timestamp": ts,
-            "annotation": annotation
-        })
+    for i in range(0, len(frames), batch_size):
+        print(f"\t\tProcessing batch {i}...")
+        batch_frames = frames[i:i + batch_size]
+        batch_ts = timestamps[i:i + batch_size]
+        batch_img_b64 = [__encode_frame_to_base64(f) for f in batch_frames]
+
+        # Building Prompt
+        previous_annotation = annotations[-1] if annotations else None
+        prompt = f"""You are shown a series of {len(batch_frames)} image frames taken from a video. For each one,
+        briefly describe what is happening in the image. Also describe any noticeable change from the previous frame.
+        
+        # Image Frame Timestamps
+        """
+        for j in range(len(batch_ts)):
+            prompt += f"\nImage {j}: {batch_ts[j]:.2f} seconds into a video. Previous annotation: {previous_annotation}."
+        prompt += """\n
+        # Return Format (return nothing else. The response must be parsable as an object in python, starting with "[" and ending with "]")
+        [
+            {
+                "timestamp": 0.0,
+                "annotation": ""
+            },
+            {
+                "timestamp": 0.21,
+                "annotation": ""
+            }
+            ...
+        ]"""
+
+        # Call Modal
+        batch_annotations = call_model(prompt, batch_img_b64)
+
+        # Parse response
+        batch_annotations = batch_annotations.strip("```")
+        batch_annotations = batch_annotations.strip("json")
+        batch_annotations = json.loads(batch_annotations)
+        for a in batch_annotations:
+            annotations.append(a)
+
+
+    # for _, (frame, ts) in enumerate(zip(frames, timestamps)):
+    #     img_b64 = __encode_frame_to_base64(frame)
+        
+    #     previous_annotation = annotations[-1] if annotations else None
+    #     prompt = f"""Describe briefly what's happening in this image frame (base64 encoded JPEG) taken at {ts:.2f} seconds into a video.
+    #     Note the changes (if any) from the previous frame. Here's the previous frame annotation: {previous_annotation}"""
+        
+    #     annotation = call_model(prompt, img_b64)
+    #     annotations.append({
+    #         "timestamp": ts,
+    #         "annotation": annotation
+    #     })
 
     return annotations
 
@@ -79,11 +123,6 @@ def _annotate_video_whole(main_question, frame_annotations, call_model):
     for i, frame_annotation in enumerate(frame_annotations):
         timestamp, annotation = frame_annotation["timestamp"], frame_annotation["annotation"]
         video_content += f"[Frame {i} (timestamp: {timestamp:.2f} seconds)] {annotation}\n"
-    
-    # video_content = ""
-    # for i, (frame, ts) in enumerate(zip(frames, timestamps)):
-    #     img_b64 = __encode_frame_to_base64(frame)
-    #     video_content += f"[Frame {i} (timestamp: {ts:.2f} seconds)] Image: {img_b64}\n"
 
     prompt = \
         f"You are analyzing a video with the following content (Frames snapshots with annotations)\n" +\

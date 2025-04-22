@@ -12,5 +12,4 @@ VIDEO_DOWNLOAD_DIR = Path("videos")
 VIDEO_DOWNLOAD_DIR.mkdir(exist_ok=True)
 
 # VLLM Settings
-VLLM_API_URL = "http://173.49.133.105:16920/v1/completions"
-USE_LOCAL_MODEL = False
+VLLM_API_URL = "http://80.188.223.202:13301/v1/chat/completions"
