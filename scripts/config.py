@@ -7,6 +7,10 @@ FRAME_INTERVAL_SECONDS = 1 # seconds
 OUTPUT_DIR = Path("outputs")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
+# Error Directory
+ERROR_DIR = Path("error")
+ERROR_DIR.mkdir(exist_ok=True)
+
 # YouTube Downloads Directory
 VIDEO_DOWNLOAD_DIR = Path("videos")
 VIDEO_DOWNLOAD_DIR.mkdir(exist_ok=True)

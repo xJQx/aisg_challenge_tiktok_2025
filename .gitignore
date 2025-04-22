@@ -2,5 +2,6 @@
 videos/
 outputs/
 data/
+error/
 
 __pycache__/

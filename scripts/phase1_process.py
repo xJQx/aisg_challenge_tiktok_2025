@@ -5,11 +5,11 @@ import base64
 import json
 from yt_dlp import YoutubeDL
 
-from scripts.config import OUTPUT_DIR, FRAME_INTERVAL_SECONDS, VIDEO_DOWNLOAD_DIR
+from scripts.config import OUTPUT_DIR, FRAME_INTERVAL_SECONDS, VIDEO_DOWNLOAD_DIR, ERROR_DIR
 
 # Download YouTube Video
 def _download_youtube_video(youtube_url, qid, video_id):
-    video_download_path = VIDEO_DOWNLOAD_DIR / f"{qid}_{video_id}.mp4"
+    video_download_path = VIDEO_DOWNLOAD_DIR / f"{qid.split('-')[0]}_{video_id}.mp4"
     if video_download_path.exists():
         print(f"\t✅ Already downloaded: {video_download_path}")
         return str(video_download_path)
@@ -56,7 +56,7 @@ def __encode_frame_to_base64(frame):
     return base64.b64encode(buffer.getvalue()).decode("utf-8")
 
 # Annotate Frames
-def _annotate_frames(frames, timestamps, call_model, batch_size=10):
+def _annotate_frames(frames, timestamps, main_question, call_model, question_id, video_id, batch_size=10):
     print("\tAnnotating Extracted Frames...")
     
     annotations = []
@@ -71,12 +71,14 @@ def _annotate_frames(frames, timestamps, call_model, batch_size=10):
         prompt = f"""You are shown a series of {len(batch_frames)} image frames taken from a video. For each one,
         briefly describe what is happening in the image. Also describe any noticeable change from the previous frame.
         
+        f"The user has asked: \"{main_question}\"\n"
+
         # Image Frame Timestamps
         """
         for j in range(len(batch_ts)):
             prompt += f"\nImage {j}: {batch_ts[j]:.2f} seconds into a video. Previous annotation: {previous_annotation}."
         prompt += """\n
-        # Return Format (return nothing else. The response must be parsable as an object in python, starting with "[" and ending with "]")
+        # Return Format (return nothing else. The response must be immediately parsable as an object in python, and the response must start with "[" and end with "]")
         [
             {
                 "timestamp": 0.0,
@@ -90,15 +92,37 @@ def _annotate_frames(frames, timestamps, call_model, batch_size=10):
         ]"""
 
         # Call Modal
-        batch_annotations = call_model(prompt, batch_img_b64)
+        try:
+            batch_annotations = call_model(prompt, batch_img_b64)
 
-        # Parse response
-        batch_annotations = batch_annotations.strip("```")
-        batch_annotations = batch_annotations.strip("json")
-        batch_annotations = json.loads(batch_annotations)
-        for a in batch_annotations:
-            annotations.append(a)
+            # Parse response
+            batch_annotations = batch_annotations.strip("```")
+            batch_annotations = batch_annotations.strip("json")
+            batch_annotations = batch_annotations.strip("```")
+            if not batch_annotations.startswith("[") or not "".endswith("]"):
+                l, r = 0, len(batch_annotations)-1
+                while l < r:
+                    if batch_annotations[l] != '[': l += 1
+                    else: break
+                while l < r:
+                    if batch_annotations[r] != ']': r -= 1
+                    else: break
+                if l == r:
+                    raise Exception("Invalid model response format!")
+                batch_annotations = batch_annotations[l:r+1]
 
+            batch_annotations = json.loads(batch_annotations)
+            for a in batch_annotations:
+                annotations.append(a)
+        except Exception as err:
+            with open(ERROR_DIR / f"{question_id}_{video_id}.json", "w") as f:
+                print(batch_annotations)
+                error_msg = {
+                    "error_type": "annotate frames error",
+                    "err": str(err),
+                    "batch_annotations": str(batch_annotations)
+                }
+                json.dump(error_msg, f, indent=2)
 
     # for _, (frame, ts) in enumerate(zip(frames, timestamps)):
     #     img_b64 = __encode_frame_to_base64(frame)
@@ -160,47 +184,52 @@ def _generate_sub_questions(main_question: str, call_model):
 
 # Main logic
 def phase1_process_video(example, call_model):
-    # Extract required fields
-    video_id = example['video_id']
-    question_id = example['qid']
-    video_youtube_url = example["youtube_url"]
-    main_question = example["question"]
-    question_prompt = example["question_prompt"]
+    try:
+        # Extract required fields
+        video_id = example['video_id']
+        question_id = example['qid']
+        video_youtube_url = example["youtube_url"]
+        main_question = example["question"]
+        question_prompt = example["question_prompt"]
 
-    print(f"\nProcessing question {question_id} video {video_id}...")
+        print(f"\nProcessing question {question_id} video {video_id}...")
 
-    # 0. Download Youtube Video to local if doesn't exist
-    video_path = _download_youtube_video(video_youtube_url, question_id, video_id)
+        # 0. Download Youtube Video to local if doesn't exist
+        video_path = _download_youtube_video(video_youtube_url, question_id, video_id)
 
-    # 1. Extract Frames
-    frames, timestamps = _extract_frames(video_path, interval=FRAME_INTERVAL_SECONDS)
+        # 1. Extract Frames
+        frames, timestamps = _extract_frames(video_path, interval=FRAME_INTERVAL_SECONDS)
 
-    # 2a. Annotate Extracted Frames
-    frame_annotations = _annotate_frames(frames, timestamps, call_model)
+        # 2a. Annotate Extracted Frames
+        frame_annotations = _annotate_frames(frames, timestamps, main_question, call_model, question_id, video_id)
 
-    # 2b.Annotate Video as a Whole
-    whole_video_annotation = _annotate_video_whole(main_question, frame_annotations, call_model)
+        # 2b.Annotate Video as a Whole
+        whole_video_annotation = _annotate_video_whole(main_question, frame_annotations, call_model)
 
-    # 3. Summarise all annotations
-    annotations_summary = _summarize_all_annotations(frame_annotations, whole_video_annotation, call_model)
+        # 3. Summarise all annotations
+        annotations_summary = _summarize_all_annotations(frame_annotations, whole_video_annotation, call_model)
 
-    # 4. Generate sub-questions from main question
-    sub_questions = _generate_sub_questions(main_question, call_model)
+        # 4. Generate sub-questions from main question
+        sub_questions = _generate_sub_questions(main_question, call_model)
 
-    # Save results
-    output = {
-        "qid": question_id,
-        "video_id": video_id,
-        "video_path": video_path,
-        "main_question": main_question,
-        "sub_questions": sub_questions,
-        "annotations": {
-            "frame_annotations": frame_annotations,
-            "whole_video_annotation": whole_video_annotation,
-            "annotations_summary": annotations_summary
+        # Save results
+        output = {
+            "qid": question_id,
+            "video_id": video_id,
+            "video_path": video_path,
+            "main_question": main_question,
+            "sub_questions": sub_questions,
+            "annotations": {
+                "frame_annotations": frame_annotations,
+                "whole_video_annotation": whole_video_annotation,
+                "annotations_summary": annotations_summary
+            }
         }
-    }
-    with open(OUTPUT_DIR / f"{question_id}_{video_id}.json", "w") as f:
-        json.dump(output, f, indent=2)
+        with open(OUTPUT_DIR / f"{question_id}_{video_id}.json", "w") as f:
+            json.dump(output, f, indent=2)
 
-    print(f"✓ Done. Annotations saved for question {question_id} video {video_id}.")
+        print(f"✓ Done. Annotations saved for question {question_id} video {video_id}.")
+    except Exception as err:
+        with open(ERROR_DIR / f"{question_id}_{video_id}.json", "w") as f:
+            json.dump(str(err), f, indent=2)
+            
