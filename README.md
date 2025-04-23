@@ -5,7 +5,6 @@
   - [✅ Option 2: If You Don’t Have a Key Yet](#-option-2-if-you-dont-have-a-key-yet)
   - [SSH into Vast.ai](#ssh-into-vastai)
 - [Setting up GPU Virtual Server](#setting-up-gpu-virtual-server)
-  - [--max-model-len 12000](#--max-model-len-12000)
 
 ---
 
@@ -167,6 +166,8 @@ Process frames, annotate, summarize, etc. — now fast with GPU
 
 ssh -i ~/.ssh/id_rsa -p 13642 root@80.188.223.202
 
+source venv/bin/activate
+
 python3 -m vllm.entrypoints.openai.api_server \
  --model mistralai/Mistral-Small-3.1-24B-Instruct-2503 \
  --host 0.0.0.0 \
@@ -176,8 +177,10 @@ python3 -m vllm.entrypoints.openai.api_server \
  --enable-auto-tool-choice \
  --limit_mm_per_prompt 'image=10' \
  --gpu-memory-utilization 0.95 \
- --swap-space 16
+ --swap-space 16 \
 --max-model-len 12000
+
+python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-Small-3.1-24B-Instruct-2503 --host 0.0.0.0 --port 8000 --tokenizer_mode mistral --tool-call-parser mistral --enable-auto-tool-choice --limit_mm_per_prompt 'image=10' --gpu-memory-utilization 0.95 --swap-space 16 --max-model-len 12000
 
 ---
 
@@ -199,3 +202,20 @@ doesn't work
 - 64,000
 - 48,000
 - 24,000
+
+---
+
+GH200 (https://docs.google.com/document/d/1RrWEsjxh7K1VYTZGEfIuB5pwSrXaXfX90o8Tp312Y-M/edit?tab=t.0)
+ssh -i ~/.ssh/lambda-dev.cer ubuntu@192.222.51.193
+
+```bash
+cd llama.cpp &&
+
+pm2 start -n "llama.cpp" "./build/bin/llama-server --model ../Mistral-Small-3.1-24B-Instruct-2503-Q8_0-GGUF/mistral-small-3.1-24b-instruct-2503-q8_0.gguf --threads 1 --port 7859 --n-gpu-layers 100 --ctx-size 50000 --parallel 5 --cont-batching --host 0.0.0.0"
+```
+
+pm2 logs
+pm2 stop llama.cpp
+pm2 delete llama.cpp
+pm2 list
+pm2 restart llama.cpp # Restart the server

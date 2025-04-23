@@ -5,7 +5,7 @@ import base64
 import json
 from yt_dlp import YoutubeDL
 
-from scripts.config import OUTPUT_DIR, FRAME_INTERVAL_SECONDS, VIDEO_DOWNLOAD_DIR, ERROR_DIR
+from scripts.config import OUTPUT_DIR, FRAME_INTERVAL_SECONDS, VIDEO_DOWNLOAD_DIR, ERROR_DIR, SKIP_PROCESSED_VIDEOS
 
 # Download YouTube Video
 def _download_youtube_video(youtube_url, qid, video_id):
@@ -193,6 +193,13 @@ def phase1_process_video(example, call_model):
         question_prompt = example["question_prompt"]
 
         print(f"\nProcessing question {question_id} video {video_id}...")
+
+        # Skip if already processed
+        if SKIP_PROCESSED_VIDEOS:
+            output_file_path = OUTPUT_DIR / f"{question_id}_{video_id}.json"
+            if output_file_path.exists():
+                print(f"\t✅ Already processed: {output_file_path}. Skipping...")
+                return
 
         # 0. Download Youtube Video to local if doesn't exist
         video_path = _download_youtube_video(video_youtube_url, question_id, video_id)
