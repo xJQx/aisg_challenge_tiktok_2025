@@ -1,4 +1,6 @@
 import json
+import math
+from concurrent.futures import as_completed, ProcessPoolExecutor
 from typing import List, Callable, Any
 from src.utils.frame_encoder import encode_to_base64, encode_blob_to_base64
 from src.config import ERROR_DIR
@@ -24,7 +26,7 @@ class FrameAnnotator:
         print("\tAnnotating Extracted Frames...")
         annotations: List[dict] = []
 
-        for i in range(0, len(frames), self.batch_size):
+        for i in range(0, len(frames), int(self.batch_size)):
             print(f"\t\tProcessing batch {i}...")
             batch_f = frames[i : i + self.batch_size]
             batch_ts = timestamps[i : i + self.batch_size]
@@ -33,6 +35,7 @@ class FrameAnnotator:
 
             prompt = self._build_prompt(batch_ts, main_question, sub_questions, previous)
             try:
+                print('Frame annotator posting to', self.vllm_url)
                 raw = self.call_model(self.vllm_url, prompt, imgs_b64)
                 parsed = self._parse_response(raw)
                 annotations.extend(parsed)
@@ -42,9 +45,8 @@ class FrameAnnotator:
 
     def _build_prompt(self, batch_ts, main_question, sub_questions, previous) -> str:
         p = (
-            f"You are shown {len(batch_ts)} frames from a video. Briefly describe each, "
-            "noting changes from the previous frame.\n"
-            "Use the following main question and subquestions to aid you in your annotations."
+            f"Instruction: You are shown {len(batch_ts)} frames from a video. Briefly describe each, "
+            "noting changes from the previous frame, specifically noting changes in entity state, position, appearance and existence based on its descriptive text. If the entity is a person, describe the gender and clothes of the person. If it is an item, describe the type and function of item. Do not hallucinate. Do not state anything you are unsure of. Only answer questions you are very sure about. Firstly, identify entities in the video, and give them descriptive texts for future references. Also identify interactions between entities. Next, answer the Subquestions. Identify the relevance of entities found with respect to the subquestions. Next, using the sub-question answers, answer the main-question. Then use your answers for the Subquestions to formulate your annotation for the frame, bearing in mind it will late be used for answering the main question eventually."
             f"User main question: \"{main_question}\"\n"
             f"Subquestions: {sub_questions}"
         )

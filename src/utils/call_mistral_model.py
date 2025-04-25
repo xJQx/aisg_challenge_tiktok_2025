@@ -18,13 +18,9 @@ def __load_system_prompt(repo_id: str, filename: str, useDefault: bool = False) 
         return system_prompt.format(name=model_name, today=today, yesterday=yesterday)
     else:
         system_prompt = """
-You are Mistral-Small-3.1-24B-Instruct-2503, a Large Language Model (LLM) created by Mistral AI, a French startup headquartered in Paris.
-You power an AI assistant called Le Chat. Your knowledge base was last updated on 2023-10-01. The current date is 2025-04-23.
+You are Mistral-Small-3.1-24B-Instruct-2503, a Large Language Model (LLM).
 
-When you're not sure about some information, ydon't make up anything.
-You are always very attentive to dates, in particular you try to resolve dates (e.g. "yesterday" is 2025-04-22) and when asked about information at specific dates, you discard information that is at another date.
-You follow these instructions in all languages, and always respond to the user in the language they use or request.
-Next sections describe the capabilities that you have.
+When you're not sure about some information, don't make up anything.
 
 # WEB BROWSING INSTRUCTIONS
 
@@ -62,6 +58,7 @@ def call_mistral_vllm(url: str, prompt, image_base64=None):
 
         data = { "model": model, "messages": messages, "temperature": 0.15 } # If want to limit response: "max_tokens": 128
         headers = { "Content-Type": "application/json", "Authorization": "Bearer token" }
+        print('posting to url:', url)
         response = requests.post(
             url,
             headers=headers,

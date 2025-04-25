@@ -1,5 +1,4 @@
 import json
-from datetime import datetime, timedelta
 from typing import Callable, Any
 from datasets import load_dataset
 from src.config import OUTPUT_DIR, SKIP_PROCESSED_VIDEOS, VLLM_API_URL
@@ -29,10 +28,10 @@ class VideoProcessor:
     def __init__(self, call_model, vllm_url):
         self.downloader = VideoDownloader()
         self.extractor = FrameExtractor()
-        self.frame_annotator = FrameAnnotator(call_model)
-        self.video_annotator = VideoAnnotator(call_model, vllm_url)
-        self.summarizer = AnnotationSummarizer(call_model, vllm_url)
-        self.subq_gen = SubQuestionGenerator(call_model, vllm_url)
+        self.frame_annotator = FrameAnnotator(call_model, vllm_url=vllm_url)
+        self.video_annotator = VideoAnnotator(call_model, vllm_url=vllm_url)
+        self.summarizer = AnnotationSummarizer(call_model, vllm_url=vllm_url)
+        self.subq_gen = SubQuestionGenerator(call_model, vllm_url=vllm_url)
         self.vllm_url = vllm_url
 
     def process(self, example: dict):
@@ -63,7 +62,7 @@ class VideoProcessor:
 
         # 3b. Video-level annotation
         whole_ann = self.video_annotator.annotate(
-            example["question"], frame_anns
+            example["question"], subqs, frame_anns
         )
 
         # 4. Summarize
@@ -110,3 +109,4 @@ if __name__ == "__main__":
     print("[Video Processing]")
     for example in dataset:
         VideoProcessor(call_mistral_vllm, VLLM_API_URL).process(example)
+        break
