@@ -145,8 +145,13 @@ In this step, we:
 To run the Video Key Frames Processor, run the following in the root directory:
 
 ```bash
-python src/video_keyframes_processor.py
+python src/video_keyframes_processor.py <batch_number> <server_number>
 ```
+
+Note:
+
+- batch_number: ranges from 0-24
+- server_number: ranges from 1-9 (depending on the number of GPU servers you have in `src/config.py`) (for parallel processing)
 
 ## 4. Video Answering
 
