@@ -18,8 +18,7 @@ class SubQuestionGenerator:
     def generate(self, main_question: str) -> Any:
         print("\tGenerating sub-questions...")
         prompt = (
-            f"Given the main question: '{main_question}', "
-            "generate 3 sub-questions to better understand the video."
+            f"Given the main question: '{main_question}', generate sub-questions to better understand the video. Subquestions generated should be adversarial in nature, to ensure robustness of the model response to the main question."
         )
         return self.call_model(self.vllm_url, prompt)
 
