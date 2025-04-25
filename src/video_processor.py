@@ -103,4 +103,8 @@ if __name__ == "__main__":
 
     # Call Model Function
     print("Using vLLM Mistral Model")
-    VideoProcessor(call_mistral_vllm).process(dataset)
+
+    # Video Processor
+    print("[Video Processing]")
+    for example in dataset:
+        VideoProcessor(call_mistral_vllm).process(example)
