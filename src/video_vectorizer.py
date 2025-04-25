@@ -11,18 +11,17 @@ from src.utils.frame_extractor import FrameExtractor
 
 
 records = []
+START_ID = 1054
+END_ID = 1199
 
-# Define the document schema.
-@dataclass
-class Frame:
-    ts: float
+# s0: 0, 850; 1054, 1199
+# s3: 850, 995; 1199, 1344
 
 
 class FrameVectorizer:
     def __init__(
         self,
         server_url: str = 'grpc://0.0.0.0:51000',
-        similarity_threshold: float = 0.5,
         output_dir: Path = OUTPUT_DIR
     ):
         # video downloader & frame extractor
@@ -30,8 +29,6 @@ class FrameVectorizer:
         self.extractor = FrameExtractor()
         # Jina client for encoding
         self.client = Client(server=server_url)
-        # similarity cutoff
-        self.threshold = similarity_threshold
         # output directories
         self.output_dir = output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -40,9 +37,9 @@ class FrameVectorizer:
     def process(self, example: dict):
         qid = example['qid']
         vid = example['video_id']
-        duration = float(example['duration'])
         error_path = ERROR_DIR / f"{qid}_{vid}.json"
         try:
+            duration = float(example['duration'])
             question = example.get('question', '')
             # path to save embeddings as Parquet
             parquet_path = self.output_dir / f"{qid}_{vid}_embeddings.parquet"
@@ -83,7 +80,6 @@ class FrameVectorizer:
                 qn,
                 limit=round(duration),  # limit to x matches, with x being the duration
                 metric='cosine',
-                threshold=self.threshold,
                 show_progress=True
             )[0]
 
@@ -110,8 +106,7 @@ class FrameVectorizer:
                 error_msg = {
                     'qid': qid,
                     'video_id': vid,
-                    'threshold': self.threshold,
-                    'message': 'No frames passed the similarity threshold.'
+                    'message': 'No frames found relevant.'
                 }
                 with open(error_path, 'w') as ef:
                     json.dump(error_msg, ef, indent=2)
@@ -133,4 +128,6 @@ if __name__ == "__main__":
     vectorizer = FrameVectorizer(server_url)
     dataset = load_dataset("lmms-lab/AISG_Challenge", split="test")
     for example in dataset:
-        vectorizer.process(example)
+        _id = int(example['qid'].split('-')[0])
+        if START_ID < _id <= END_ID:
+            vectorizer.process(example)

@@ -4,6 +4,7 @@ Pillow
 requests
 tqdm
 torch
+pandas
 
 # YouTube
 yt_dlp
