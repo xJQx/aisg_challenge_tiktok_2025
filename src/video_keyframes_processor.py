@@ -19,7 +19,7 @@ class VideoKeyFramesProcessor:
         self.video_annotator = VideoAnnotator(call_model)
         self.summarizer = AnnotationSummarizer(call_model)
 
-    def process(self, example: dict, example_keyframes_data, example_current_result: object, out_path: str):
+    def process(self, example: dict, example_keyframes_data, example_current_result: dict, out_path: str):
         qid, vid = example["qid"], example["video_id"]
         print(f"\nProcessing {qid}, video {vid}…")
 
@@ -32,12 +32,13 @@ class VideoKeyFramesProcessor:
         
         # 1. KeyFrames-level annotations
         keyframes_anns = self.frame_annotator.annotate(
-            keyframes, timestamps, example["question"], qid, vid
+            keyframes, timestamps, example["question"], example_current_result["sub_questions"], qid, vid
         )
 
         # 2. Save everything
-        example_current_result["annotations"]["keyframes_annotations"] = keyframes_anns
-        self._save_result(example_current_result, out_path)
+        if keyframes_anns:
+            example_current_result["annotations"]["keyframes_annotations"] = keyframes_anns
+            self._save_result(example_current_result, out_path)
 
     @staticmethod
     def _save_result(data: dict, path):
@@ -60,7 +61,8 @@ if __name__ == "__main__":
 
     # Load Key Frames Dataset
     print("Loading Key Frames Dataset...")
-    combined_foi_data = pd.read_parquet("hf://datasets/lemousehunter/combined_foi/final_combined_foi.parquet")
+    # combined_foi_data = pd.read_parquet("hf://datasets/lemousehunter/combined_foi/final_combined_foi.parquet")
+    combined_foi_data = pd.read_parquet("data/final_combined_foi.parquet")
 
     # Call Model Function
     print("Using vLLM Mistral Model")
@@ -76,12 +78,13 @@ if __name__ == "__main__":
             print(f"\tSkipping... Output file does not exist: {out_path}")
             continue
         
-        example_current_result = pd.read_json(out_path)
+        with open(out_path, "r") as f:
+            example_current_result = json.load(f)
 
         # Check if keyframes dataset contain the correct qid and vid
         example_keyframes_data = combined_foi_data[combined_foi_data["qid"] == qid]
         if not example_keyframes_data.empty:
-            example_keyframes_data.sort_values(by='timestamp', ascending=False).reset_index(drop=True)
+            example_keyframes_data = example_keyframes_data.sort_values(by='timestamp', ascending=True).reset_index(drop=True)
         else:
             print("Skipping... No keyframes exist.")
             continue
