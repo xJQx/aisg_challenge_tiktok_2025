@@ -3,8 +3,9 @@ from typing import List, Callable, Any
 
 
 class VideoAnnotator:
-    def __init__(self, call_model: Callable[..., Any]):
+    def __init__(self, call_model: Callable[..., Any], vllm_url):
         self.call_model = call_model
+        self.vllm_url = vllm_url
 
     def annotate(self, main_question: str, frame_annotations: List[dict]) -> str:
         print("\tAnnotating video as a whole...")
@@ -17,4 +18,4 @@ class VideoAnnotator:
             f"User question: \"{main_question}\"\n"
             "Provide a short overall description of the video."
         )
-        return self.call_model(prompt)
+        return self.call_model(self.vllm_url, prompt)

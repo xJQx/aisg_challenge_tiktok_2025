@@ -55,7 +55,7 @@ def __buildMessages(model, prompt, image_base64_list: list):
         ]
     return messages
 
-def call_mistral_vllm(prompt, image_base64=None):
+def call_mistral_vllm(url: str, prompt, image_base64=None):
     try:
         model = "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
         messages = __buildMessages(model, prompt, image_base64)
@@ -63,7 +63,7 @@ def call_mistral_vllm(prompt, image_base64=None):
         data = { "model": model, "messages": messages, "temperature": 0.15 } # If want to limit response: "max_tokens": 128
         headers = { "Content-Type": "application/json", "Authorization": "Bearer token" }
         response = requests.post(
-            VLLM_API_URL,
+            url,
             headers=headers,
             data=json.dumps(data)
         )

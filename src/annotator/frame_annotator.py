@@ -5,10 +5,11 @@ from src.config import ERROR_DIR
 
 
 class FrameAnnotator:
-    def __init__(self, call_model: Callable[..., Any], batch_size: int = 10, processBlob: bool = False):
+    def __init__(self, call_model: Callable[..., Any], batch_size: int = 10, processBlob: bool = False, vllm_url = ""):
         self.call_model = call_model
         self.batch_size = batch_size
         self.processBlob = processBlob
+        self.vllm_url = vllm_url
         ERROR_DIR.mkdir(parents=True, exist_ok=True)
 
     def annotate(
@@ -32,7 +33,7 @@ class FrameAnnotator:
 
             prompt = self._build_prompt(batch_ts, main_question, sub_questions, previous)
             try:
-                raw = self.call_model(prompt, imgs_b64)
+                raw = self.call_model(self.vllm_url, prompt, imgs_b64)
                 parsed = self._parse_response(raw)
                 annotations.extend(parsed)
             except Exception as e:
