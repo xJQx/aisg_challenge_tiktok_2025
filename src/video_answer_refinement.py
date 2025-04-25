@@ -11,13 +11,12 @@ from src.utils.call_qwen2_model import call_qwen2_model
 from src.config import OUTPUT_DIR, SUBMISSION_DIR
 
 
-LOWER = 1000
-UPPER = 1200
+LOWER = 200
+UPPER = 400
 
-# s0: 0, 200; 1000, 1344
-# s1: 200, 400
-# s2: 400, 800
-# s3: 800, 1000
+# s0: 0, 200; 1000, 1200
+# s2: 400, 800; 200, 400
+# s3: 800, 1000; 1200, 1344
 
 
 class VideoAnswerRefinement:
