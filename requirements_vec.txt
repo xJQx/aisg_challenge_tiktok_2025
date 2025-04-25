@@ -1,0 +1,7 @@
+# Core
+opencv-python
+yt_dlp
+datasets
+clip-client
+mpmath
+scikit-learn

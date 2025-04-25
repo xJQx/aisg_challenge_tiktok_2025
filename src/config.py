@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # Settings
-FRAME_INTERVAL_SECONDS = 1 # seconds
+FRAME_INTERVAL_SECONDS = 1/24 # seconds
 SKIP_PROCESSED_VIDEOS = True
 
 # Outputs Directory
