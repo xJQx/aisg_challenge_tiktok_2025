@@ -1,13 +1,14 @@
 import json
 from typing import List, Callable, Any
-from src.utils.frame_encoder import encode_to_base64
+from src.utils.frame_encoder import encode_to_base64, encode_blob_to_base64
 from src.config import ERROR_DIR
 
 
 class FrameAnnotator:
-    def __init__(self, call_model: Callable[..., Any], batch_size: int = 10):
+    def __init__(self, call_model: Callable[..., Any], batch_size: int = 10, processBlob: bool = False):
         self.call_model = call_model
         self.batch_size = batch_size
+        self.processBlob = processBlob
         ERROR_DIR.mkdir(parents=True, exist_ok=True)
 
     def annotate(
@@ -25,7 +26,7 @@ class FrameAnnotator:
             print(f"\t\tProcessing batch {i}...")
             batch_f = frames[i : i + self.batch_size]
             batch_ts = timestamps[i : i + self.batch_size]
-            imgs_b64 = [encode_to_base64(f) for f in batch_f]
+            imgs_b64 = [encode_to_base64(f) if not self.processBlob else encode_blob_to_base64(f) for f in batch_f]
             previous = annotations[-1]["annotation"] if annotations else None
 
             prompt = self._build_prompt(batch_ts, main_question, previous)

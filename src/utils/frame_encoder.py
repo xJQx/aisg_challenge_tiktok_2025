@@ -13,3 +13,6 @@ def encode_to_base64(frame) -> str:
     buffer = BytesIO()
     pil_img.save(buffer, format="JPEG")
     return base64.b64encode(buffer.getvalue()).decode("utf-8")
+
+def encode_blob_to_base64(frame_blob: bytes) -> str:
+    return base64.b64encode(frame_blob).decode("utf-8")
