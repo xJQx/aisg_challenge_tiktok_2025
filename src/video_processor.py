@@ -2,7 +2,7 @@ import json
 from datetime import datetime, timedelta
 from typing import Callable, Any
 from datasets import load_dataset
-from src.config import OUTPUT_DIR, SKIP_PROCESSED_VIDEOS
+from src.config import OUTPUT_DIR, SKIP_PROCESSED_VIDEOS, VLLM_API_URL
 from src.utils.call_mistral_model import call_mistral_vllm
 from src.utils.downloader import VideoDownloader
 from src.utils.frame_extractor import FrameExtractor
@@ -12,8 +12,9 @@ from src.annotator import (
 )
 
 class SubQuestionGenerator:
-    def __init__(self, call_model: Callable[..., Any]):
+    def __init__(self, call_model: Callable[..., Any], vllm_url):
         self.call_model = call_model
+        self.vllm_url = vllm_url
 
     def generate(self, main_question: str) -> Any:
         print("\tGenerating sub-questions...")
@@ -21,17 +22,18 @@ class SubQuestionGenerator:
             f"Given the main question: '{main_question}', "
             "generate 3 sub-questions to better understand the video."
         )
-        return self.call_model(prompt)
+        return self.call_model(self.vllm_url, prompt)
 
 
 class VideoProcessor:
-    def __init__(self, call_model):
+    def __init__(self, call_model, vllm_url):
         self.downloader = VideoDownloader()
         self.extractor = FrameExtractor()
         self.frame_annotator = FrameAnnotator(call_model)
-        self.video_annotator = VideoAnnotator(call_model)
-        self.summarizer = AnnotationSummarizer(call_model)
-        self.subq_gen = SubQuestionGenerator(call_model)
+        self.video_annotator = VideoAnnotator(call_model, vllm_url)
+        self.summarizer = AnnotationSummarizer(call_model, vllm_url)
+        self.subq_gen = SubQuestionGenerator(call_model, vllm_url)
+        self.vllm_url = vllm_url
 
     def process(self, example: dict):
         qid = example["qid"]
@@ -48,24 +50,24 @@ class VideoProcessor:
             example["youtube_url"], qid, vid
         )
 
-        # 1. Extract frames
+        # 1. Sub-questions
+        subqs = self.subq_gen.generate(example["question"])
+
+        # 2. Extract frames
         frames, timestamps = self.extractor.extract(video_path)
 
-        # 2a. Frame-level annotations
+        # 3a. Frame-level annotations
         frame_anns = self.frame_annotator.annotate(
-            frames, timestamps, example["question"], qid, vid
+            frames, timestamps, example["question"], subqs, qid, vid
         )
 
-        # 2b. Video-level annotation
+        # 3b. Video-level annotation
         whole_ann = self.video_annotator.annotate(
             example["question"], frame_anns
         )
 
-        # 3. Summarize
+        # 4. Summarize
         summary = self.summarizer.summarize(frame_anns, whole_ann)
-
-        # 4. Sub-questions
-        subqs = self.subq_gen.generate(example["question"])
 
         # 5. Save everything
         result = {
@@ -107,4 +109,4 @@ if __name__ == "__main__":
     # Video Processor
     print("[Video Processing]")
     for example in dataset:
-        VideoProcessor(call_mistral_vllm).process(example)
+        VideoProcessor(call_mistral_vllm, VLLM_API_URL).process(example)

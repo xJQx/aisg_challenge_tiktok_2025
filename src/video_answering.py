@@ -12,7 +12,7 @@ class VideoAnswering:
     1-shot: Validate Open-Ended questions for contextual fit
     2-shot: Answer based on question type
   
-  Model: bartowski/Qwen2-72B-Instruct-GGUF (GH200)
+  Model: Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4 (GH200)
 
   0 Shot: figure type of question (open ended or mcq)
   - Is the question Open-Ended or MCQ? If it is Open-Ended, answer 'OE'. If it is MCQ, answer it as 'MCQ'.
