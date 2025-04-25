@@ -1,10 +1,14 @@
 **Tables of Content**
 
-- [SSH and Vast.ai](#ssh-and-vastai)
-  - [✅ Option 1: If You Already Have an SSH Key](#-option-1-if-you-already-have-an-ssh-key)
-  - [✅ Option 2: If You Don’t Have a Key Yet](#-option-2-if-you-dont-have-a-key-yet)
-  - [SSH into Vast.ai](#ssh-into-vastai)
-- [Setting up GPU Virtual Server](#setting-up-gpu-virtual-server)
+- [Setting Up](#setting-up)
+  - [Prepare GPU server connection url](#prepare-gpu-server-connection-url)
+  - [Setting up GPU Server](#setting-up-gpu-server)
+  - [Set up another GPU server for a secondary model](#set-up-another-gpu-server-for-a-secondary-model)
+- [Model Pipeline](#model-pipeline)
+  - [1. Video Processor](#1-video-processor)
+  - [2. Video Vectorizer](#2-video-vectorizer)
+  - [3. Key Frames Processor](#3-key-frames-processor)
+  - [4. Video Answering](#4-video-answering)
 
 ---
 
