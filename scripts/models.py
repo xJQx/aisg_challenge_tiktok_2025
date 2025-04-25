@@ -3,7 +3,7 @@ from huggingface_hub import hf_hub_download
 from datetime import datetime, timedelta
 import json
 
-from scripts.config import VLLM_API_URL
+from src.config import VLLM_API_URL
 
 def __load_system_prompt(repo_id: str, filename: str, useDefault: bool = False) -> str:
     if useDefault:

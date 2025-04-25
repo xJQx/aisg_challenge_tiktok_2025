@@ -5,7 +5,7 @@ import base64
 import json
 from yt_dlp import YoutubeDL
 
-from scripts.config import OUTPUT_DIR, FRAME_INTERVAL_SECONDS, VIDEO_DOWNLOAD_DIR, ERROR_DIR, SKIP_PROCESSED_VIDEOS
+from src.config import OUTPUT_DIR, FRAME_INTERVAL_SECONDS, VIDEO_DOWNLOAD_DIR, ERROR_DIR, SKIP_PROCESSED_VIDEOS
 
 # Download YouTube Video
 def _download_youtube_video(youtube_url, qid, video_id):
