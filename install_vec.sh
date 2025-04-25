@@ -18,13 +18,4 @@ pip install --force-reinstall -U setuptools
 pip install --force-reinstall -U pip
 wget https://bootstrap.pypa.io/ez_setup.py -O - | python
 
-python3 -m vllm.entrypoints.openai.api_server \
-  --model Qwen/Qwen2.5-72B-Instruct \
-  --host 0.0.0.0 \
-  --port 8000 \
-  --tokenizer_mode mistral \
-  --tool-call-parser mistral \
-  --enable-auto-tool-choice \
-  --gpu-memory-utilization 0.95 \
-  --swap-space 16
-  --max-model-len 12000
+vllm serve Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4   --host 0.0.0.0   --port 8000   --enable-auto-tool-choice   --gpu-memory-utilization 0.96  6--swap-space 16 --max-num-seq 3

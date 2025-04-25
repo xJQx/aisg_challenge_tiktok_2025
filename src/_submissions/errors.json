@@ -1,0 +1,1466 @@
+[
+  {
+    "0854-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0974-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0957-7": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0933-3": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0929-1": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0974-1": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0974-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0974-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0974-0": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0957-1": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0957-3": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0957-2": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0976-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0976-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0976-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0983-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0976-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0983-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0983-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0976-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0985-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0983-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0985-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0985-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0957-0": "ValueError(\"'ANSWER:' is not in list\")"
+  },
+  {
+    "0983-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0985-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0985-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0995-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0995-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0995-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0996-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0996-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0995-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0996-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0995-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0996-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0996-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0999-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0999-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0999-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1002-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0999-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "0999-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1002-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1002-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1002-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1002-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1009-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1009-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1009-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1011-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1009-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1009-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1011-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1011-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1011-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1011-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1018-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1018-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1018-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1018-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1020-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1020-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1018-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1020-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1020-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1020-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1023-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1023-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1023-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1023-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1031-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1023-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1031-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1031-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1031-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1031-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1037-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1037-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1037-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1037-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1037-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1044-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1044-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1044-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1044-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1044-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1045-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1045-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1045-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1045-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1046-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1045-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1046-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1046-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1046-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1046-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1049-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1049-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1049-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1049-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1051-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1049-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1051-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1051-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1051-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1051-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1053-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1053-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1053-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1053-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1053-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1055-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1055-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1055-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1055-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1055-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1064-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1064-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1064-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1064-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1064-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1075-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1075-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1075-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1075-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1075-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1080-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1080-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1080-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1081-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1080-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1081-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1081-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1081-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1081-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1087-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1087-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1087-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1087-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1087-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1090-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1080-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1090-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1090-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1090-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1090-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1091-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1091-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1091-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1091-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1091-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1095-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1095-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1095-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1095-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1095-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1101-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1101-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1101-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1101-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1111-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1111-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1101-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1111-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1111-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1111-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1112-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1112-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1112-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1117-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1117-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1112-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1112-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1117-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1117-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1117-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1119-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1119-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1119-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1119-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1119-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1121-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1121-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1121-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1121-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1121-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1122-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1122-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1122-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1122-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1122-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1124-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1124-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1124-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1124-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1127-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1124-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1127-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1127-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1127-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1130-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1127-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1130-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1130-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1130-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1130-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1134-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1134-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1134-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1137-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1134-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1134-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1137-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1137-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1137-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1137-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1145-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1145-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1145-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1145-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1145-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1159-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1159-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1159-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1159-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1159-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1160-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1160-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1160-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1160-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1160-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1161-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1161-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1161-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1161-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1161-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1162-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1162-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1162-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1162-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1162-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1168-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1168-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1168-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1168-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1168-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1169-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1169-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1169-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1169-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1169-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1170-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1170-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1170-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1170-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1170-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1173-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1173-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1173-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1173-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1173-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1175-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1175-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1175-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1175-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1175-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1176-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1176-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1176-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1176-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1176-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1177-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1177-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1177-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1177-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1178-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1177-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1178-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1178-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1181-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1181-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1178-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1178-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1181-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1181-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1181-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1182-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1182-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1182-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1182-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1183-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1183-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1183-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1183-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1183-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1192-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1192-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1192-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1192-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1203-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1192-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1182-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1203-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1203-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1203-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1203-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1206-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1206-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1206-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1206-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1206-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1209-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1209-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1209-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1209-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1209-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1210-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1210-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1210-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1210-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1210-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1214-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1214-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1214-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1214-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1214-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1223-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1223-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1223-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1223-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1223-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1225-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1225-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1225-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1225-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1225-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1229-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1229-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1229-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1229-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1229-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1231-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1231-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1231-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1231-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1231-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1233-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1233-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1233-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1233-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1235-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1233-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1235-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1235-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1235-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1235-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1236-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1236-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1236-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1236-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1236-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1237-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1237-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1237-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1237-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1237-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1239-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1239-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1239-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1239-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1239-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1242-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1242-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1242-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1242-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1242-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1255-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1255-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1255-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1255-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1255-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1260-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1260-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1260-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1260-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1260-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1261-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1261-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1261-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1261-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1261-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1262-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1262-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1262-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1262-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1262-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1275-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1275-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1275-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1275-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1275-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1276-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1276-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1276-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1276-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1278-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1276-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1278-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1278-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1278-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1278-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1283-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1283-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1283-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1283-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1288-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1283-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1288-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1288-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1288-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1288-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1290-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1290-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1290-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1293-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1290-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1290-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1293-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1293-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1293-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1293-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1294-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1294-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1294-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1294-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1298-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1294-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1298-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1298-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1298-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1298-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1299-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1299-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1299-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1299-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1307-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1307-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1299-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1307-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1307-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1307-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1308-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1308-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1308-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1308-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1310-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1308-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1310-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1310-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1310-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1310-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1312-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1312-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1312-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1312-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1318-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1312-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1318-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1318-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1318-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1324-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1324-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1324-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1324-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1329-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1324-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1329-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1329-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1329-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1329-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1344-0": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1318-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1344-1": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1344-2": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1344-3": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  },
+  {
+    "1344-7": "Exception(\"Invalid zero shot response. Response should be 'OE' or 'MCQ'.\")"
+  }
+]
