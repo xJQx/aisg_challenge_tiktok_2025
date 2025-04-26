@@ -1,16 +1,48 @@
+# Singapore AI Student Challenge 2025 - TikTok Track
+
+**Challenge Link:** https://developers.tiktok.com/ai/hackathon
+
 **Tables of Content**
 
+- [Singapore AI Student Challenge 2025 - TikTok Track](#singapore-ai-student-challenge-2025---tiktok-track)
+  -  [Challenge Background](challenge-background)
+- [Architecture](#architecture)
 - [Setting Up](#setting-up)
   - [Prepare GPU server connection url](#prepare-gpu-server-connection-url)
   - [Setting up GPU Server](#setting-up-gpu-server)
   - [Set up another GPU server for a secondary model](#set-up-another-gpu-server-for-a-secondary-model)
-- [Model Pipeline](#model-pipeline)
+- [Solution Pipeline](#solution-pipeline)
   - [1. Video Processor](#1-video-processor)
   - [2. Video Vectorizer](#2-video-vectorizer)
   - [3. Key Frames Processor](#3-key-frames-processor)
   - [4. Video Answering](#4-video-answering)
 
----
+
+
+## Challenge Background
+
+Although the capabilities of Multimodal Large Language Models (MLLMs) are continuously improving, we find that there is still a gap between models and humans in terms of cognitive understanding. We tested the differences in cognitive understanding between models and humans, then classified, and analyzed them. The results are as follows:
+
+For an objective fact, humans do not deviate in their cognition just because the fact is described in different ways. Human understanding of an objective fact has a certain degree of consistency, even under rigorous testing.
+
+We found that artificial intelligence models do not possess such consistency in many scenarios. This problem is reflected in our testing and is categorized as follows:
+
+
+i. Models may correctly answer a single question but fail when the same fact is queried differently.
+
+ii. Models may give a wrong answer to a single question and still fail when the question is rephrased, finding an alternate wrong answer to the same objective fact.
+
+
+iii. Models may stay consistent through their judgement, but the initial judgement is simply incorrect compared to the objective truth.
+
+We hope that hosting this event can inspire more innovative solutions to address deficiencies in the capability of consistent cognitive understanding
+
+
+
+# Architecture
+
+![aisg_challenge_2025_tiktok](https://github.com/user-attachments/assets/d85a6724-d9a5-4c97-9f1d-c3417bc49f1f)
+
 
 # Setting Up
 
@@ -86,7 +118,7 @@ Follow the above steps for a 2nd GPU server, but serve the following model inste
 vllm serve Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4 --max-model-len 12000 --gpu-memory-utilization 0.99 --dtype bfloat16 --tensor-parallel-size 1 --swap-space 16 --host 0.0.0.0 --port 8000
 ```
 
-# Model Pipeline
+# Solution Pipeline
 
 ## 1. Video Processor
 
@@ -115,7 +147,7 @@ python src/video_processor.py
 ## 2. Video Vectorizer
 
 Reference: `/src/video_vectorizer.py`
-Model Used: `mistralai/Mistral-Small-3.1-24B-Instruct-2503`
+Model Used: `jina-ai/clip-as-service`
 
 Note: Please set the `VLLM_API_URL` value in the `src/config.py`
 
